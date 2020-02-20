@@ -1,0 +1,179 @@
+// main: style.less
+
+body {
+    background-color: @background__primary__color;
+    color: #fff;
+    font-family: @primary__font;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.svg-defs {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+svg.icon:not(.stroke) {
+    color: @primary__color;
+    vertical-align: baseline;
+}
+
+.wrapper {
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    
+    @media @lg__screen {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+}
+
+
+.container--custom {
+    max-width: @container__custom;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2, h3,
+.h1, .h2, .h3 {
+  font-family: @secondary__font;
+    font-weight: bold;
+}
+
+.btn {
+    border-radius: 0;
+    font-weight: 450;
+    font-size: 13px;
+    padding: 17px;
+    min-width: 155px;
+    line-height: 1;
+    text-transform: uppercase;
+    
+    &-light {
+        .button(#fff);
+    }
+    
+    &-dark {
+       .button(@background__primary__color);
+    }
+    
+}
+
+.section {
+    
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+    .heading {
+        font-size: 36px;
+        font-weight: bold;
+        color: @primary__color;
+        
+        text-transform: uppercase;
+        text-align: center;
+        
+        margin-bottom: 50px;
+        
+        @media @sm__screen {
+            font-size: 48px;
+        }
+    }
+    
+}
+
+.modal {
+    
+    &-dialog {
+        
+        &--custom {
+            max-width: calc(100% - 20px);
+            
+            @media screen and (min-width: 390px) {
+                max-width: 380px;
+            }
+        }
+        
+        .modal-content {
+            font-family: @third__font;
+            
+            border-radius: 0;
+            background-color: @primary__color;
+                
+            padding: 20px 30px;
+            
+            .modal-header,
+            .modal-body {
+                padding: 0;
+            }
+            
+            .modal-header {
+                border: none;
+                
+                .modal-title {
+                    font-weight: bold;
+                    font-size: 18px;
+                    color: @background__secondary__color;
+                    
+                    margin-bottom: 35px;
+                }
+                
+                .close {
+                    float: none;
+                    
+                    padding: 0;
+                    margin: 0;
+                    
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                        color: @background__primary__color;
+                    }
+                }
+            }
+            
+            .modal-body {
+                
+                input,
+                textarea {
+                    .input__in__modal();
+                }
+                
+                button {
+                    display: block;
+                    
+                    width: 100%;
+                    
+                    font-weight: bold;
+                    font-size: 15px;
+                    
+                    margin-top: 55px;
+                }
+                
+                .hint {
+                    font-size: 12px;
+                    color: @background__secondary__color;                    
+                    text-align: center;
+                    
+                    margin: 20px 0 0;
+                }
+                
+            }
+            
+            @media screen and (min-width: 390px) {
+                padding: 40px 50px;
+            }
+            
+        }
+        
+    }
+    
+}
