@@ -66,26 +66,55 @@ h1, h2, h3,
        .button(@background__primary__color);
     }
     
+    &--custom {
+        border-color: @primary__color;
+        
+        &:not(.btn--outline) {
+            .button(@primary__color);
+            color: @background__secondary__color;
+        }
+        
+        &.btn--outline {
+            .button(@primary__color);
+            color: @primary__color;
+            background-color: transparent;
+        }
+        
+    }
+    
 }
 
-.section {
+.thumbnail {
+    position: relative;
+    text-align: center;
     
-    padding-top: 40px;
-    padding-bottom: 40px;
-    
-    .heading {
-        font-size: 36px;
-        font-weight: bold;
-        color: @primary__color;
+    &.thumbnail--shadow {
         
-        text-transform: uppercase;
-        text-align: center;
+        padding-bottom: 80px;
         
-        margin-bottom: 50px;
-        
-        @media @sm__screen {
-            font-size: 48px;
+        &::after {
+            content: '';
+
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            z-index: -1;
+
+            width: 200%;
+            height: 230px;
+
+            background-image: url(../img/effects/shadow.png);
+            background-position: center bottom;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
+    }
+    
+    img {
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
     }
     
 }
