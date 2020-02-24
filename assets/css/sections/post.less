@@ -1,0 +1,55 @@
+// main: ../style.less
+.section--post {
+    
+    .col__post {
+
+        .post__article {
+            
+            
+            .article__thumbnail {
+	 
+            }
+            
+            .article__content {
+	            
+                color: @secondary__color;
+                
+                p {
+                    margin: 30px 0;
+                }
+                
+                blockquote {
+                    font-weight: 450;
+                    font-size: 24px;
+                    line-height: 29px;
+                    
+                    padding: 10px 0;
+                    
+                    border: 1px solid @primary__color;
+                    border-left: none;
+                    border-right: none;
+                }
+                
+            }
+            
+            @media @md__screen {
+                margin-bottom: 50px;
+            }
+            
+        }
+
+        .post__comments {
+            
+        }
+        
+    }
+    
+    .col__sidebar {
+        margin-top: 30px;
+        
+        @media @md__screen {
+            margin-top: 0;
+        }
+    }
+    
+}

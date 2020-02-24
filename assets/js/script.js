@@ -17,7 +17,14 @@ jQuery(function($) {
         init__reviews__slider();
         init__tutorial__sliders();
         init__youtube__players();
+        init__counters();
+        
+        $('.section--cart .product .col__size input').change(function() {
+            console.log( $(this).parents('.row'));
+            $($(this).parents('.row'))[$(this).prop('checked') ? 'addClass' : 'removeClass']('row--active');
             
+        });
+        
     });
     
     $('#headerNavbarContent').on('touchmove mousewheel', function(e) {
@@ -49,9 +56,9 @@ jQuery(function($) {
     }
     
     function toggle__header__menu(e) {
-        prevent__default__e(e);
-        
         if (is__screen(lg__screen)) return;
+        
+        prevent__default__e(e);
         
         if ($('#headerNavbarContent').hasClass('show')) {
             $('#headerNavbarContent').removeClass('animate');
@@ -225,6 +232,54 @@ jQuery(function($) {
             });
         });
         
+    }
+    
+    function counterFilter(value) {
+        
+        return value < 10 ? `0${value}` : value;
+    }
+    
+    function counterUpdate(config) {
+        
+        if (!config) return;
+        
+        const { 
+            node,
+            price,
+            value
+        } = config;
+        
+        const parent = node.closest('.row');
+        const priceNode = parent.querySelector('.col__price > span');
+        
+        priceNode.innerHTML = `${((value || 1) * price)} <span class="rouble">i</span>`;
+    }
+    
+    function init__counters() {
+        
+        if (!window.InputCounter) return;
+        
+        let counters = document.querySelectorAll('.section--cart .product__counter');
+        
+        if (counters.length) {
+           counters.forEach(function(counter) {
+                let config = {};
+                if (counter.dataset.config)
+                    config = JSON.parse(counter.dataset.config);
+                
+                
+                config.decrement = document.createElement('a');
+                config.decrement.classList.add('btn', 'btn-dark', 'btn--decrement');
+               
+                config.increment = document.createElement('a');
+                config.increment.classList.add('btn', 'btn-dark', 'btn--increment');
+                
+                config.onupdate = counterUpdate;
+                config.filter = counterFilter;
+                new InputCounter(counter, config);
+            });
+        }
+
     }
     
     function unique__id(key) {

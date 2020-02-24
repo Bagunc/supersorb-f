@@ -104,6 +104,8 @@
                 
                 @media @lg__screen {
                     height: calc(100vh - @header__height - 47px);
+                    
+                    padding: 0 10px;
                 }
                 
                 @media @sm__screen__mx {
@@ -124,6 +126,39 @@
     
     @media @lg__screen {
         margin: 0;
+    }
+     
+    &.section--banner {
+        
+        .slick__dots {
+	        display: none;
+        }
+    
+        .section__content {
+            
+            .top-slider {
+
+                .slider__item {
+                    height: auto;
+                    
+                    background-size: auto;
+                    background-position: top right;
+                    
+                    @media @sm__screen {
+                        height: 540px;
+                        
+                        padding: 0;
+                    }
+                }
+                
+            }
+            
+        }
+        
+        @media @lg__screen {
+            margin-bottom: 60px;
+        }
+        
     }
     
 }

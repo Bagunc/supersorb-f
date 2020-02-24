@@ -2,6 +2,7 @@
 @import '../fonts/akrobat/import.css';
 @import '../fonts/avenir-next-cyr/import.css';
 @import '../fonts/ubuntu/import.css';
+@import '../fonts/webfont-rouble/import.css';
 .input__in__modal {
   font-size: 16px;
   color: #1A1A1A;
@@ -127,11 +128,6 @@ svg.icon:not(.stroke) {
   width: 12px;
   height: 12px;
 }
-@media screen and (min-width: 992px) {
-  .main__screens {
-    display: flex;
-  }
-}
 .main__social {
   display: none;
   position: fixed;
@@ -171,6 +167,11 @@ svg.icon:not(.stroke) {
 @media screen and (min-width: 992px) {
   .main__social {
     display: block;
+  }
+}
+@media screen and (min-width: 992px) {
+  .home .main__screens {
+    display: flex;
   }
 }
 h1,
@@ -254,6 +255,11 @@ h3,
   object-fit: contain;
   max-width: 100%;
   max-height: 100%;
+}
+.thumbnail--cover img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 .youtube__player {
   position: relative;
@@ -365,6 +371,41 @@ h3,
     position: absolute;
     bottom: -75px;
   }
+}
+.checkbox--virtual {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 21px;
+  height: 21px;
+  margin: 0;
+  border: 1px solid #B8B8B8;
+  background: transparent;
+  vertical-align: top;
+  cursor: pointer;
+}
+.checkbox--virtual .element {
+  width: 15px;
+  height: 15px;
+  background-color: #B8B8B8;
+  margin: 0 !important;
+  opacity: 0;
+  transition: opacity 0.25s;
+  -moz-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s;
+  -ms-transition: opacity 0.25s;
+}
+.checkbox--virtual input {
+  width: 0;
+  height: 0;
+  z-index: 0;
+  position: absolute;
+  z-index: -10px;
+}
+.checkbox--virtual input:checked ~ .element {
+  opacity: 1;
 }
 .modal-dialog--custom {
   max-width: calc(100% - 20px);
@@ -1221,6 +1262,7 @@ h3,
 @media screen and (min-width: 992px) {
   .section--top .section__content .top-slider .slider__item {
     height: calc(100vh - 104px - 47px);
+    padding: 0 10px;
   }
 }
 @media screen and (max-width: 575px) {
@@ -1237,6 +1279,190 @@ h3,
   .section--top {
     margin: 0;
   }
+}
+.section--top.section--banner .slick__dots {
+  display: none;
+}
+.section--top.section--banner .section__content .top-slider .slider__item {
+  height: auto;
+  background-size: auto;
+  background-position: top right;
+}
+@media screen and (min-width: 576px) {
+  .section--top.section--banner .section__content .top-slider .slider__item {
+    height: 540px;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .section--top.section--banner {
+    margin-bottom: 60px;
+  }
+}
+.section--posts .post {
+  margin-bottom: 40px;
+}
+.section--posts .post__thumbnail {
+  height: 254px;
+}
+.section--posts .post__content {
+  padding: 15px;
+  background-color: #1A1A1A;
+}
+.section--posts .post__content .content__title {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+.section--posts .post__content .content__desc {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0;
+}
+@media screen and (min-width: 576px) {
+  .section--posts .post__content {
+    padding: 25px;
+  }
+}
+.section--posts .post .btn {
+  margin-top: 15px !important;
+}
+@media screen and (min-width: 576px) {
+  .section--posts .post .btn {
+    max-width: 155px;
+    margin-top: 35px !important;
+  }
+}
+@media screen and (min-width: 576px) {
+  .section--posts .post {
+    margin-bottom: 70px;
+  }
+}
+.section--post .col__post .post__article .article__content {
+  color: #C4C4C4;
+}
+.section--post .col__post .post__article .article__content p {
+  margin: 30px 0;
+}
+.section--post .col__post .post__article .article__content blockquote {
+  font-weight: 450;
+  font-size: 24px;
+  line-height: 29px;
+  padding: 10px 0;
+  border: 1px solid #FFD02B;
+  border-left: none;
+  border-right: none;
+}
+@media screen and (min-width: 768px) {
+  .section--post .col__post .post__article {
+    margin-bottom: 50px;
+  }
+}
+.section--post .col__sidebar {
+  margin-top: 30px;
+}
+@media screen and (min-width: 768px) {
+  .section--post .col__sidebar {
+    margin-top: 0;
+  }
+}
+.section--cart .product {
+  margin-bottom: 30px;
+}
+.section--cart .product .product__name {
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 992px) {
+  .section--cart .product .product__name {
+    text-align: left;
+    white-space: nowrap;
+  }
+}
+.section--cart .product .product__name,
+.section--cart .product .head label {
+  font-family: 'Avenir Next Cyr';
+  font-weight: 450;
+  font-size: 24px;
+  color: #C4C4C4;
+}
+.section--cart .product .col__size {
+  position: relative;
+  padding: 5px 10px 5px 31px;
+}
+.section--cart .product .col__size .checkbox--virtual {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.section--cart .product .col__size span {
+  display: inline-block;
+  margin-left: 15px;
+}
+.section--cart .product .col__props {
+  font-size: 18px;
+  color: #C4C4C4;
+}
+.section--cart .product .col__props .row {
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+}
+.section--cart .product .col__props .row.row--active {
+  background-color: #282828;
+}
+.section--cart .product .product__counter .counter {
+  max-width: 120px;
+  position: relative;
+}
+.section--cart .product .product__counter .counter input {
+  max-width: 100%;
+  height: 25px;
+  text-align: center;
+  color: inherit;
+  background-color: transparent;
+  padding: 0 25px;
+  border: none;
+  outline: none;
+}
+.section--cart .product .product__counter .counter .btn {
+  position: absolute;
+  top: 0;
+  width: 25px;
+  min-width: 25px;
+  height: 25px;
+  padding: 0;
+  background-color: #494949;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+}
+.section--cart .product .product__counter .counter .btn--decrement {
+  left: 0;
+  background-image: url(../img/icons/decrement.svg);
+}
+.section--cart .product .product__counter .counter .btn--increment {
+  right: 0;
+  background-image: url(../img/icons/increment.svg);
+}
+.section--cart .checkout {
+  text-align: right;
+}
+.section--cart .checkout .checkout__total {
+  font-weight: 450;
+  font-size: 24px;
+  color: #FFD02B;
+  margin-bottom: 30px;
+}
+.section--cart .checkout .btn {
+  min-width: 289px;
 }
 .footer {
   padding: 50px 0 10px;

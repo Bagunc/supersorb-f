@@ -1,0 +1,55 @@
+// main: ../style.less
+
+.section--posts {
+    
+    .post {
+        margin-bottom: 40px;
+        
+        &__thumbnail {
+            height: 254px;
+        }
+        
+        &__content {
+            padding: 15px;
+            
+            background-color: @background__secondary__color;
+            
+            .content__title {
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 20px;
+                text-transform: uppercase;
+                
+                margin-bottom: 25px;
+            }
+            
+            .content__desc {
+                font-size: 16px;
+                line-height: 20px;
+                
+                margin: 0;
+            }
+            
+            @media @sm__screen {
+                padding: 25px;
+            }
+            
+        }
+        
+        .btn {
+            margin-top: 15px !important;
+            
+            @media @sm__screen {
+                max-width: 155px;
+                
+                margin-top: 35px !important;
+            }
+        }
+        
+        @media @sm__screen {
+            margin-bottom: 70px;
+        }
+        
+    }
+    
+}
