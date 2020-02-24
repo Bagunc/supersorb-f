@@ -1,0 +1,66 @@
+// main: ../style.less
+
+.section__send-question {
+
+    .heading {
+
+        @media @lg__screen {
+            margin-bottom: 10px;
+        }
+
+    }
+
+    .container {
+        background-size: 0;
+
+        .row {
+
+            .form__content {
+                max-width: 390px;
+                width: 100%;
+
+                .form-group:not(:last-child) {
+                    margin-bottom: 22px;
+                }
+
+                .form-control {
+                    border-radius: 0;
+                    border-color: @third__color;
+                    padding: 15px 18px;
+                    font-size: 18px;
+                    color: @secondary__color;
+                    background-color: transparent;
+
+                    &:focus {
+                        box-shadow: 0 0 0 0.2rem fade(#fff, 50%)
+                    }
+                }
+
+                textarea {
+                    resize: none;
+                    height: 178px;
+                }
+
+                .btn {
+                    min-width: 215px;
+                }
+
+            }
+
+            @media @lg__screen {
+                height: 635px;
+            }
+
+        }
+
+        @media @lg__screen {
+            background-position: center right;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-blend-mode: lighten;
+            background-color: @background__primary__color;
+        }
+
+    }
+
+}

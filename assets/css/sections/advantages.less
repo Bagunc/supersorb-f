@@ -1,0 +1,151 @@
+// main: ../style.less
+
+.section--advantages {
+    margin-left: -5px;
+    margin-right: -5px;
+	
+    .container {
+        
+        @media @lg__screen__mx {
+            max-width: inherit;
+        }
+        
+    }
+    
+    .advantages {
+        
+        &__list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            width: 100%;
+            height: 100%;
+
+            padding: 0;
+            margin: 0;
+
+            font-size: 16px;
+
+            list-style-type: none;
+            
+            .list__item {
+                display: flex;
+                
+                .item__space {
+                                        
+                    @media @md__screen {
+                        width: 35px;
+                        height: 1px;
+                    }
+                    
+                }
+                
+                .item__text {
+                    position: relative;
+                    
+                    padding: 0 0 0 25px;
+                    
+                    &::before {
+                        content: attr(data-index);
+                        
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        
+                        z-index: -1;
+                        
+                        font-family: @third__font;
+                        font-weight: bold;
+                        font-size: 24px;
+                        
+                        color: rgba(29, 29, 29, 0.55);
+                        
+                        @media @md__screen {
+                            top: 50%;
+                            transform: translateY(-50%);
+                            
+                            font-size: 129px;
+                        }
+                        
+                    }
+                    
+                    br {
+                        display: none;
+                        
+                        @media @md__screen {
+                            display: block;
+                        }
+                    }
+                    
+                    @media @md__screen {
+                        padding: 0 0 0 40px;
+                    }
+                    
+                }
+                
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                    
+                    @media @md__screen {
+                        margin-bottom: 80px;
+                    }
+                    
+                }
+
+            }
+
+        }
+        
+        &__thumbnail {
+            
+            @media @md__screen {
+                padding: 0 !important;
+            }
+            
+        }
+        
+        &--right {
+            margin-top: 10px;
+            
+            text-align: left;
+            
+            .list__item {
+                                
+                .item__text {
+                    
+                    &::before {
+                        left: 0;
+                        right: auto;
+                        
+                        @media @md__screen {
+                            left: auto;
+                            right: 0;
+                        }
+                    }
+                    
+                    @media @md__screen {
+                        justify-content: flex-end;
+
+                        padding: 0 40px 0 0;
+                    }
+                    
+                }
+                
+                @media @md__screen {
+                    justify-content: flex-end;
+                }    
+                
+            }
+            
+            @media @md__screen {
+                margin-top: 0;
+                
+                text-align: right;
+            }
+            
+        }
+        
+    }
+    
+}

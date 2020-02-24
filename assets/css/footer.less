@@ -1,193 +1,139 @@
 // main: style.less
 
 .footer {
-    
-    &__form {
         
-        .heading {
-            
-            @media @lg__screen {
-                margin-bottom: 10px;
-            }
-            
-        }
+    padding: 50px 0 10px;
         
-        .container--custom {
-            background: none;
-            
-            .row {
-                
-                .form__content {
-                    max-width: 390px;
-                    width: 100%;
-    
-                    .form-group:not(:last-child) {
-                        margin-bottom: 22px;
-                    }
-                    
-                    .form-control {
-                        border-radius: 0;
-                        border-color: @third__color;
-                        padding: 15px 18px;
-                        font-size: 18px;
-                        color: @secondary__color;
-                        background-color: transparent;
+    p {
+        margin-bottom: 0;
+    }
 
-                        &:focus {
-                            box-shadow: 0 0 0 0.2rem fade(#fff, 50%)
+    .bottom__col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .col__block {
+
+            &:not(:last-child) {
+                margin-top: 0 !important;
+                margin-bottom: 15px !important;
+            }
+
+            &--cards {
+                max-width: 220px;
+                width: 100%;
+
+                .visa {
+                    width: 48px;
+                    height: 22px;
+                }
+
+                .mastercard {
+                    width: 50px;
+                    height: 40px;
+                }
+
+                .mir {
+                    width: 74px;
+                    height:  21px;
+                }
+
+            }
+
+        }
+
+        &--copyright h4 {
+            font-family: @primary__font;
+            font-weight: bold;
+            font-size: 27px;
+
+            span {
+                display: block;
+
+                font-weight: normal;
+                font-size: 16px;
+
+                color: @third__color;
+
+                letter-spacing: 0.015em;
+                text-transform: lowercase;
+            }
+
+        }
+
+        &--cards {
+            text-align: center;
+        }
+
+        &--callback {
+
+            a {
+                display: block;
+                color: inherit;
+            }
+
+            .col__block--callback {
+
+                a {
+                    &:not(.phone) {
+                        font-size: 12px;
+                        text-decoration-line: underline;
+                        text-transform: uppercase;
+
+                        @media @lg__screen {
+                            font-size: 16px;
                         }
+
                     }
 
-                    textarea {
-                        resize: none;
-                        height: 178px;
+                    &.phone {
+                        font-family: @secondary__font;
+                        font-size: 36px;
+                        line-height: 1;
+
+                        span {
+                            @media @lg__screen {
+                                display: inline-block !important;
+                            }
+                        }
+
                     }
-                    
-                    .btn {
-                        min-width: 215px;
+
+                    &:hover {
+                        text-decoration: none;
                     }
-                    
+
                 }
-                
-                @media @lg__screen {
-                    height: 635px;
+
+            }
+
+            .col__block--info {
+                font-size: 16px;
+
+                a, p {
+                    margin-bottom: 20px;
                 }
-                
+
             }
-            
-            @media @lg__screen {
-                background-image: url(../img/backgrounds/footer-form-bg.png);
-                background-position: center right;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-blend-mode: lighten;
-                background-color: @background__primary__color;
-            }
-            
+
         }
-        
+
     }
     
-    &__bottom {
-        padding: 50px 0 60px;
+    .poweredby {
+        font-size: 12px;
+        letter-spacing: 2px;
+        font-family: @third__font;
         
-        p {
-            margin-bottom: 0;
+        color: @third__color;
+        word-spacing: 5px;
+
+        margin-top: 15px;
+
+        a {
+            color: @primary__color;
         }
-        
-        .bottom__col {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            
-            .col__block {
-                
-                &:not(:last-child) {
-                    margin-top: 0 !important;
-                    margin-bottom: 15px !important;
-                }
-                
-                &--cards {
-                    max-width: 220px;
-                    width: 100%;
-
-                    .visa {
-                        width: 48px;
-                        height: 22px;
-                    }
-
-                    .mastercard {
-                        width: 50px;
-                        height: 40px;
-                    }
-
-                    .mir {
-                        width: 74px;
-                        height:  21px;
-                    }
-
-                }
-                
-            }
-            
-            &--copyright h4 {
-                font-family: @primary__font;
-                font-weight: bold;
-                font-size: 27px;
-                
-                span {
-                    display: block;
-                    
-                    font-weight: normal;
-                    font-size: 16px;
-                    
-                    color: @third__color;
-                    
-                    letter-spacing: 0.015em;
-                    text-transform: lowercase;
-                }
-                
-            }
-            
-            &--cards {
-                text-align: center;
-            }
-            
-            &--callback {
-                
-                a {
-                    display: block;
-                    color: inherit;
-                }
-                
-                .col__block--callback {
-                    
-                    a {
-                        &:not(.phone) {
-                            font-size: 12px;
-                            text-decoration-line: underline;
-                            text-transform: uppercase;
-                            
-                            @media @lg__screen {
-                                font-size: 16px;
-                            }
-                            
-                        }
-                    
-                        &.phone {
-                            font-family: @secondary__font;
-                            font-size: 36px;
-                            line-height: 1;
-                            
-                            span {
-                                @media @lg__screen {
-                                    display: inline-block !important;
-                                }
-                            }
-                            
-                        }
-                        
-                        &:hover {
-                            text-decoration: none;
-                        }
-                        
-                    }
-                    
-                }
-                
-                .col__block--info {
-                    font-size: 16px;
-                    
-                    a, p {
-                        margin-bottom: 20px;
-                    }
-                    
-                }
-                
-            }
-            
-        }
-                    
     }
     
 }

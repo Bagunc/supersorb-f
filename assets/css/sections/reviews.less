@@ -1,0 +1,91 @@
+// main: ../style.less
+
+.section--reviews {
+    
+    .reviews__slider {
+                            
+        .slider__col {
+            
+            .col__row {
+                margin-bottom: 0;
+                
+                @media @lg__screen {
+                    margin-bottom: -80px;
+                }
+            }
+            
+            .col__item {
+                margin-bottom: 40px;
+            
+                .item__image {
+                    
+                    img {
+                        max-width: 100%;
+                    }
+                    
+                }
+                
+                .item__title {
+                    .reviews__slider__item__heading();
+                }
+
+                .item__content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .content__title {
+                        .reviews__slider__item__heading();
+                    }
+
+                    .content__desc {
+                        line-height: 17px;
+
+                        margin: 0;
+                    }
+
+                }
+                
+                @media screen and (max-width: 425px) {
+                    .item__image,
+                    .item__content {
+                        max-width: 100%;
+                        width: 100%;
+                        flex: 100%;
+                    }
+                    
+                    .item__image {
+                    
+                        img {
+                            margin: 0 auto;
+                        }
+                        
+                    }
+                    
+                    .item__title {
+                        margin-bottom: 5px;
+                    }
+                    
+                    text-align: center;
+                    
+                }
+                
+                @media @sm__screen {
+                    margin-bottom: 85px;
+                }
+
+            }
+            
+        }
+        
+    }
+    
+    .section__content {
+        
+        @media @lg__screen {
+            padding-bottom: 80px;
+        }
+        
+    }
+    
+}

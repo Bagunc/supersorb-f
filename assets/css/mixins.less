@@ -42,3 +42,27 @@
     }
         
 }
+
+.reviews__slider__item__heading {
+    font-family: @secondary__font;
+    font-weight: 500;
+    font-size: 24px;
+
+    margin: 15px 0 0 0;
+}
+
+.tutorial__slide__item__tfo(@side) {
+    -webkit-transform-origin: center @side;
+    -moz-transform-origin: center @side;
+    -ms-transform-origin: center @side;
+    -o-transform-origin: center @side;
+    transform-origin: center @side;
+}
+
+.tutorial__slide__item__tf(@size: 15px, @scale: 0.9) {
+    -webkit-transform: translate3d(@size,0,0) scale(@scale);
+    -moz-transform: translate3d(@size,0,0) scale(@scale);
+    -ms-transform : translate3d(@size,0,0) scale(@scale);
+    -o-transform : translate3d(@size,0,0) scale(@scale);
+    transform: translate3d(@size,0,0) scale(@scale);
+}

@@ -1,24 +1,51 @@
 // main: style.less
 
 .section {
-    
     padding-top: 40px;
     padding-bottom: 40px;
     
-    .heading {
-        font-size: 36px;
-        font-weight: bold;
-        color: @primary__color;
+    &__content {
         
-        text-align: center;
+        .content__heading {
+            font-size: 36px;
+            font-weight: bold;
+            color: @primary__color;
+
+            text-align: center;
+
+            margin-bottom: 50px;
+
+            @media @sm__screen {
+                font-size: 48px;
+            }
+
+        }
         
-        margin-bottom: 50px;
-        
-        @media @sm__screen {
-            font-size: 48px;
+    }
+    
+}
+
+.home {
+     
+    @media @lg__screen {
+        .section {
+            display: flex;
+            align-items: center;
+            
+            min-height: 100vh;
+            
+            &__content {
+                width: 100%;
+            }
+            
         }
     }
     
 }
 
 @import './sections/product-types.less';
+@import './sections/send-question.less';
+@import './sections/reviews.less';
+@import './sections/tutorial.less';
+@import './sections/advantages.less';
+@import './sections/top-slider.less';

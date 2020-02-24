@@ -1,0 +1,204 @@
+// main: ../style.less
+
+.section--tutorial {
+
+    .col__slider {
+	    text-align: center;
+        
+        margin-bottom: 25px;
+        
+        @media @sm__screen {
+            margin-bottom: 50px;
+        }
+        
+        @media @lg__screen {
+            margin-bottom: 0;
+        }
+        
+    }
+    
+    .tutorial__slider {
+        display: inline-block;
+        
+        overflow: hidden;
+        
+        .slider__inner {
+            position: relative;
+            overflow: visible;
+
+            .inner__item {
+                display: block;
+                width: 100%;
+                
+                position: absolute;
+                z-index: 0;
+                
+                opacity: 0;
+                transition: all .4s ease-in-out;
+                
+                
+                &.active {
+                    position: relative;
+                    z-index: 1;
+                    
+                    opacity: 1;
+
+                    &.right {
+                        .tutorial__slide__item__tfo(~'right');
+                    }
+
+                    &.left {
+                        .tutorial__slide__item__tfo(~'left');
+                    }
+                }
+
+                &.next {
+                    .tutorial__slide__item__tfo(~'right');
+                    opacity: 1;
+                }
+
+                &.prev {
+                    .tutorial__slide__item__tfo(~'left');
+                    opacity: 1;
+                }
+             }
+        }
+
+        &.landscape {
+
+            .slider__inner {
+                margin: 0 @tutorial__landscape__item;
+                width: auto;
+
+                .inner__item {
+
+                    &.active {
+
+                        &.right {
+                            .tutorial__slide__item__tf(@tutorial__landscape__item, 0.9);
+                        }
+
+                        &.left {
+                            .tutorial__slide__item__tf(@tutorial__landscape__item * -1, 0.9);
+                        }
+
+                    }
+
+                    &.next {
+                        .tutorial__slide__item__tf(@tutorial__landscape__item, 0.9);
+                    }
+
+                    &.prev {
+                        .tutorial__slide__item__tf(@tutorial__landscape__item * -1, 0.9);
+                    }
+
+                }
+
+            }
+
+            .slider__control {
+                width: @tutorial__landscape__item;
+                background: transparent;
+            }
+
+        }
+
+        &.portrait {
+
+            .slider__inner {
+                margin: 0 @tutorial__portrait__item__sm;
+                width: auto;
+
+                .inner__item {
+                    
+                    &.active {
+                        
+                        &.right {
+                            .tutorial__slide__item__tf(@tutorial__portrait__item__sm, 0.9);
+                            
+                            @media @sm__screen {
+                                .tutorial__slide__item__tf(@tutorial__portrait__item, 0.9);
+                            }
+                        }
+
+                        &.left {
+                            .tutorial__slide__item__tf(@tutorial__portrait__item__sm * -1, 0.9);
+                            
+                            @media @sm__screen {
+                                .tutorial__slide__item__tf(@tutorial__portrait__item * -1, 0.9);
+                            }
+                        }
+
+                    }
+
+                    &.next {
+                        .tutorial__slide__item__tf(@tutorial__portrait__item__sm, 0.9);
+                        
+                        @media @sm__screen {
+                            .tutorial__slide__item__tf(@tutorial__portrait__item, 0.9);
+                        }
+                    }
+
+                    &.prev {
+                        .tutorial__slide__item__tf(@tutorial__portrait__item__sm * -1, 0.9);
+                        
+                        @media @sm__screen {
+                            .tutorial__slide__item__tf(@tutorial__portrait__item * -1, 0.9);
+                        }
+                    }
+                }
+                
+                @media @sm__screen {
+                    margin: 0 @tutorial__portrait__item;
+                }
+
+            }
+                
+            .slider__control {
+                width: @tutorial__portrait__item__sm;
+                background: transparent;
+                
+                @media @sm__screen {
+                    width: @tutorial__portrait__item;
+                }
+            }
+
+        }
+        
+        @media @sm__screen {
+            min-height: 335px;          
+        }
+
+    }
+    
+    .col__youtube {
+        
+        .youtube__player {
+            
+            min-height: 240px;
+            
+            @media @md__screen {
+                min-height: 335px;
+            }
+            
+        }
+        
+    }
+    
+    p {
+        font-size: 14px;
+        margin-top: 20px;
+
+        padding: 0;
+
+        text-align: left;
+
+        @media @md__screen {
+            font-size: 16px;
+            
+            padding:  0 50px;
+            margin-top: 50px;
+        }
+    }
+    
+}
