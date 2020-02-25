@@ -5,11 +5,11 @@
 @import '../fonts/webfont-rouble/import.css';
 .input__in__modal {
   font-size: 16px;
-  color: #1A1A1A;
-  border: unset;
-  border-bottom: 1px solid #000000;
+  color: #1A1A1A !important;
+  border: unset !important;
+  border-bottom: 1px solid #000000 !important;
   border-radius: 0;
-  background-color: transparent;
+  background-color: transparent !important;
   padding: 15px 0;
   resize: none;
   box-shadow: unset;
@@ -226,6 +226,24 @@ h3,
 .btn--custom.btn--outline:focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 208, 43, 0.5);
 }
+.form-group:not(:last-child) {
+  margin-bottom: 22px;
+}
+.form-control {
+  border-radius: 0;
+  border-color: #B8B8B8 !important;
+  padding: 15px 18px;
+  font-size: 18px;
+  color: #C4C4C4;
+  background-color: #0E0E0E !important;
+}
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+textarea {
+  resize: none;
+  height: 178px;
+}
 .thumbnail {
   position: relative;
   text-align: center;
@@ -376,16 +394,25 @@ h3,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  width: 21px;
-  height: 21px;
   margin: 0;
-  border: 1px solid #B8B8B8;
-  background: transparent;
   vertical-align: top;
   cursor: pointer;
 }
 .checkbox--virtual .element {
+  display: inline-flex;
+  flex: 0 0 21px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 21px;
+  height: 21px;
+  border: 1px solid #B8B8B8;
+  background: transparent;
+  margin-right: 15px;
+}
+.checkbox--virtual .element::before {
+  content: '';
+  display: block;
   width: 15px;
   height: 15px;
   background-color: #B8B8B8;
@@ -400,12 +427,36 @@ h3,
 .checkbox--virtual input {
   width: 0;
   height: 0;
-  z-index: 0;
   position: absolute;
-  z-index: -10px;
+  z-index: -10;
 }
-.checkbox--virtual input:checked ~ .element {
+.checkbox--virtual input:checked ~ .element::before {
   opacity: 1;
+}
+.list--done {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.list--done li {
+  position: relative;
+  line-height: 22px;
+  padding-left: 36px;
+}
+.list--done li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.list--done li::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 27px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: url(../img/icons/done.svg);
+  background-size: contain;
 }
 .modal-dialog--custom {
   max-width: calc(100% - 20px);
@@ -447,11 +498,11 @@ h3,
 .modal-dialog .modal-content .modal-body input,
 .modal-dialog .modal-content .modal-body textarea {
   font-size: 16px;
-  color: #1A1A1A;
-  border: unset;
-  border-bottom: 1px solid #000000;
+  color: #1A1A1A !important;
+  border: unset !important;
+  border-bottom: 1px solid #000000 !important;
   border-radius: 0;
-  background-color: transparent;
+  background-color: transparent !important;
   padding: 15px 0;
   resize: none;
   box-shadow: unset;
@@ -754,24 +805,6 @@ h3,
 .section__send-question .container .row .form__content {
   max-width: 390px;
   width: 100%;
-}
-.section__send-question .container .row .form__content .form-group:not(:last-child) {
-  margin-bottom: 22px;
-}
-.section__send-question .container .row .form__content .form-control {
-  border-radius: 0;
-  border-color: #B8B8B8;
-  padding: 15px 18px;
-  font-size: 18px;
-  color: #C4C4C4;
-  background-color: transparent;
-}
-.section__send-question .container .row .form__content .form-control:focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
-}
-.section__send-question .container .row .form__content textarea {
-  resize: none;
-  height: 178px;
 }
 .section__send-question .container .row .form__content .btn {
   min-width: 215px;
@@ -1390,18 +1423,6 @@ h3,
 }
 .section--cart .product .col__size {
   position: relative;
-  padding: 5px 10px 5px 31px;
-}
-.section--cart .product .col__size .checkbox--virtual {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  z-index: 2;
-}
-.section--cart .product .col__size span {
-  display: inline-block;
-  margin-left: 15px;
 }
 .section--cart .product .col__props {
   font-size: 18px;
@@ -1418,8 +1439,28 @@ h3,
 .section--cart .product .col__props .row.row--active {
   background-color: #282828;
 }
+.section--cart .product .col__props .col__price {
+  margin: 10px 0 0;
+}
+@media screen and (min-width: 576px) {
+  .section--cart .product .col__props .col__price {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 575px) {
+  .section--cart .product .col__props {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 390px) {
+  .section--cart .product .col__props {
+    font-size: 14px;
+  }
+}
 .section--cart .product .product__counter .counter {
   max-width: 120px;
+  min-width: 75px;
+  margin-left: auto;
   position: relative;
 }
 .section--cart .product .product__counter .counter input {
@@ -1452,6 +1493,11 @@ h3,
   right: 0;
   background-image: url(../img/icons/increment.svg);
 }
+@media screen and (min-width: 576px) {
+  .section--cart .product .product__counter .counter {
+    margin-left: 0;
+  }
+}
 .section--cart .checkout {
   text-align: right;
 }
@@ -1463,6 +1509,44 @@ h3,
 }
 .section--cart .checkout .btn {
   min-width: 289px;
+}
+.section--checkout .checkout__heading {
+  font-family: 'Avenir Next Cyr';
+  font-weight: 450;
+  font-size: 24px;
+  color: #C4C4C4;
+  margin-bottom: 25px;
+}
+.section--checkout .form__controls .form-group {
+  margin-bottom: 40px;
+}
+.section--checkout .form__controls .form-group:last-child {
+  margin-bottom: 0;
+}
+.section--checkout .form__controls .form-group .form-control {
+  min-height: 49px;
+}
+.section--checkout .checkout__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.section--checkout .checkout__info .payment__list {
+  margin-top: 30px;
+}
+.section--checkout .checkout__info .payment__list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+}
+.section--checkout .checkout__info .payment__list ul li:not(:last-child) {
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 768px) {
+  .section--checkout .checkout__info {
+    margin-top: 0;
+  }
 }
 .footer {
   padding: 50px 0 10px;

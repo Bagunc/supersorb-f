@@ -249,6 +249,28 @@ h1, h2, h3,
     
 }
 
+.form-group:not(:last-child) {
+    margin-bottom: 22px;
+}
+
+.form-control {
+    border-radius: 0;
+    border-color: @third__color !important;
+    padding: 15px 18px;
+    font-size: 18px;
+    color: @secondary__color;
+    background-color: @background__primary__color !important;
+
+    &:focus {
+        box-shadow: 0 0 0 0.2rem fade(#fff, 50%)
+    }
+}
+
+textarea {
+    resize: none;
+    height: 178px;
+}
+
 .thumbnail {
     position: relative;
     text-align: center;
@@ -453,51 +475,100 @@ h1, h2, h3,
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    
-    position: relative;
-
-    width: 21px;
-    height: 21px;
 
     margin: 0;
-    
-    border: 1px solid #B8B8B8;
-    
-    background: transparent;
-    
+        
     vertical-align: top;
     
     cursor: pointer;
     
     .element {
-        width: 15px;
-        height: 15px;
+        display: inline-flex;
+        flex: 0 0 21px;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
         
-        background-color: #B8B8B8;
+        width: 21px;
+        height: 21px;
         
-        margin: 0 !important;
+        border: 1px solid #B8B8B8;
+    
+        background: transparent;
         
-        opacity: 0;
+        margin-right: 15px;
         
-        transition: opacity .25s;
-        -moz-transition: opacity .25s;
-        -o-transition: opacity .25s;
-        -webkit-transition: opacity .25s;
-        -ms-transition: opacity .25s;
+        &::before {
+            content: '';
+            
+            display: block;
+            
+            width: 15px;
+            height: 15px;
+
+            background-color: #B8B8B8;
+
+            margin: 0 !important;
+
+            opacity: 0;
+
+            transition: opacity .25s;
+            -moz-transition: opacity .25s;
+            -o-transition: opacity .25s;
+            -webkit-transition: opacity .25s;
+            -ms-transition: opacity .25s;
+        }
     }
     
     input {
         width: 0;
         height: 0;
-        z-index: 0;
         position: absolute;
-        z-index: -10px;
+        z-index: -10;
     
-        &:checked ~ .element {
+        &:checked ~ .element::before {
             opacity: 1;
         }
         
     }
+    
+}
+
+.list--done {
+    padding: 0;
+    margin: 0;
+    
+    list-style: none;
+        
+    li {
+        position: relative;
+        
+        line-height: 22px;
+        
+        padding-left: 36px;
+        
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        
+        &::before {
+            content: '';
+            
+            position: absolute;
+            top: 5px;
+            left: 0;
+            
+            width: 27px;
+            height: 22px;
+            
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-image: url(../img/icons/done.svg);
+            background-size: contain;
+        }
+    }
+    
     
 }
 

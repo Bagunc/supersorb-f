@@ -29,28 +29,12 @@
         
         .col__size {
             position: relative;
-            padding: 5px 10px 5px 31px;
-            
-            .checkbox--virtual {
-                position: absolute;
-                top: 50%;
-                left: 0;
-                transform: translateY(-50%);
-                
-                z-index: 2;
-            }
-            
-            span {
-                display: inline-block;
-                margin-left: 15px;
-            }
-            
         }
         
         .col__props {
              font-size: 18px;
              color: @secondary__color;
-            
+                        
             .row {
                 padding: 5px 10px;
                 
@@ -65,13 +49,32 @@
                 }
             }
             
+            .col__price  {
+                margin: 10px 0 0;
+                
+                @media @sm__screen {
+                    margin: 0;
+                }
+                
+            }
+            
+            @media @sm__screen__mx {
+                padding: 0;            
+            }
+            
+            @media screen and (max-width: 390px) {
+                font-size: 14px;
+            }
+            
         }
         
         .product__counter {
             
             .counter {
                 max-width: 120px;
-
+                min-width: 75px;
+                margin-left: auto;
+                
                 position: relative;
 
                 input {
@@ -114,6 +117,10 @@
                         background-image: url(../img/icons/increment.svg);
                     }
                     
+                }
+                
+                @media @sm__screen {
+                    margin-left: 0;
                 }
 
             }

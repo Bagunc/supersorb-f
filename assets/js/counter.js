@@ -15,7 +15,7 @@ function InputCounter(node, config) {
             // TODO: Colling after update
         },
         filter: function(value) {
-            // TODO: Colling after update
+            return value;
         }
     };
     
@@ -80,6 +80,22 @@ function InputCounter(node, config) {
             self.Config.value = value;
             self.Update();
         });
+        
+        self.Input.getValue = function() {
+          
+            return self.Config.value;
+        };
+        
+        self.Input.setCounterValue = function (value) {
+            if (value < self.Config.min)
+                value = self.Config.min;
+            
+            if (value > self.Config.max)
+                value = self.Config.max;
+            
+            self.Config.value = value;
+            self.Update();
+        };
 
         self.Container.append(self.Decrement);
         self.Container.append(self.Input);

@@ -18,12 +18,7 @@ jQuery(function($) {
         init__tutorial__sliders();
         init__youtube__players();
         init__counters();
-        
-        $('.section--cart .product .col__size input').change(function() {
-            console.log( $(this).parents('.row'));
-            $($(this).parents('.row'))[$(this).prop('checked') ? 'addClass' : 'removeClass']('row--active');
-            
-        });
+        init__cart__items__choose();
         
     });
     
@@ -234,6 +229,23 @@ jQuery(function($) {
         
     }
     
+    function init__cart__items__choose() {
+        $('.section--cart .product .col__size input').change(function() {
+            
+            let parent = $(this).parents('.row__size'),
+                checked = $(this).prop('checked');
+            
+            let counter = {};
+            if ($(parent).find('.counter > input').length)
+                counter = $(parent).find('.counter > input')[0];
+            
+            $(parent)[checked ? 'addClass' : 'removeClass']('row--active');
+            
+            if ('setCounterValue' in counter && checked && !counter.getValue())
+                counter.setCounterValue(1);
+        });
+    }
+    
     function counterFilter(value) {
         
         return value < 10 ? `0${value}` : value;
@@ -250,8 +262,12 @@ jQuery(function($) {
         } = config;
         
         const parent = node.closest('.row');
-        const priceNode = parent.querySelector('.col__price > span');
+        parent.classList[value > 0 ? 'add' : 'remove']('row--active');
         
+        const checkbox = parent.querySelector('.checkbox--virtual [type="checkbox"]');
+        checkbox.checked = value > 0;
+        
+        const priceNode = parent.querySelector('.col__price > span');
         priceNode.innerHTML = `${((value || 1) * price)} <span class="rouble">i</span>`;
     }
     
