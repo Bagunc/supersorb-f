@@ -1,0 +1,44 @@
+// main: style.less
+
+.button(@color) {
+    
+    background-color: @color;
+    border-color: @color;
+    
+    &:focus {
+        box-shadow: 0 0 0 0.2rem fade(@color, 50%);
+    }
+    
+}
+
+.input__in__modal {
+    
+    font-size: 16px;
+    color: @background__secondary__color;
+    
+    border: unset;
+    border-bottom: 1px solid #000000;
+    border-radius: 0;
+    
+    background-color: transparent;
+    
+    padding: 15px 0;
+    
+    resize: none;
+    
+    box-shadow: unset;
+    
+    &::placeholder {
+      color: @background__secondary__color;
+      opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+      color: @background__secondary__color;
+    }
+
+    &::-ms-input-placeholder {
+      color: @background__secondary__color;
+    }
+        
+}

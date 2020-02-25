@@ -1,0 +1,57 @@
+// main: ../style.less
+
+.section--partners-block {
+    
+    .heading {
+        margin-bottom: 40px;
+    }
+    
+    .partners-search {
+        
+        & > a, &__selects {
+            margin-top: 40px;
+        }
+        
+        &__selects {
+            align-items: center;
+            flex-direction: column;
+            
+            select + select {
+                margin-top: 20px;
+            }
+    
+            @media @sm__screen {
+                flex-direction: row;
+                
+                select + select {
+                    margin-top: 0;
+                }
+                
+            }
+        }
+        
+        .form-control {
+            
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            
+            font-size: 18px;
+            width: 100%;
+            border: none;
+            border-radius: 0;
+            background-color: @secondary__color;
+            
+            @media @sm__screen { 
+                max-width: calc(50% - 12.5px);
+            }
+            
+            option {
+                width: 100%;
+            }
+            
+        }
+        
+    }
+    
+}
