@@ -1,0 +1,104 @@
+// main: ../style.less
+
+.section--proteam-single-block {
+    
+    > .container {
+        padding: 0;
+    }
+    
+    hr {
+        margin-top: 50px;
+        width: 115px;
+        height: 0px;
+        border: 2px solid @secondary__color;
+    }
+    
+    .worker-info {
+        
+        align-items: center;
+        flex-direction: column;
+        
+        @media @md__screen {
+            align-items: flex-start;
+            flex-direction: row;
+        }
+        
+        img {
+            width: 282px;
+            height: 282px;
+        }
+        
+        &__block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            padding: 50px 15px 0 15px;
+            
+            @media @md__screen {
+                align-items: flex-start;
+                padding-top: 0;
+                text-align: start;
+                padding-left: 26px;
+            }
+            
+        }
+        
+        &__name {
+            font-size: 24px;
+            line-height: 29px;
+            color: @primary__color;
+        }
+        
+        &__icons {
+            
+            margin-top: 10px;
+            
+            svg + svg {
+                margin-left: 20px;
+            }
+            
+            .icon-vk {
+                width: 20px;
+                height: 11px;
+            }
+            
+            .icon-instagram {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .icon-youtube {
+                width: 24px;
+                height: 17px;
+            }
+            
+        }
+        
+        &__text {
+            margin-top: 30px;
+            font-size: 16px;
+            max-width: 600px;
+            color: @secondary__color;
+        }
+        
+    }
+    
+    .worker-images {
+        
+        img {
+            margin: 45px auto 0 auto;
+            width: 315px;
+            height: 315px;
+        }
+        
+        .popup-image {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+    }
+    
+}
