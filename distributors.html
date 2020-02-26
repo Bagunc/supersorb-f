@@ -4,25 +4,20 @@
         <!-- metadata -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="Set-Cookie" content="HttpOnly;Secure;SameSite=Strict" />
         
         <!-- document title -->
-        <title>Suprasorb F - Home</title>
+        <title>Suprasorb F - Distributors</title>
         
         <!-- stylesheets -->
         <link rel="stylesheet" href="./assets/vendors/bootstrap-4.4.1/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="./assets/vendors/slick-1.8.1/slick/slick.css" />
         <link rel="stylesheet" href="./assets/css/style.css" />
         
         <!-- scripts -->
-        <script src="https://www.youtube.com/iframe_api"></script>
         <script src="./assets/vendors/jquery/jquery-3.4.1.min.js"></script>
         <script src="./assets/vendors/bootstrap-4.4.1/js/bootstrap.min.js"></script>
-        <script src="./assets/vendors/slick-1.8.1/slick/slick.min.js"></script>
-        <script src="./assets/js/counter.js"></script>
         <script src="./assets/js/script.js"></script>
     </head>
-    <body class="cart">
+    <body>
        <div class="svg-defs hidden">
            <svg xmlns="http://www.w3.org/2000/svg">
                <symbol id="icon-cart" viewBox="0 0 20 18" fill="none">
@@ -76,11 +71,8 @@
                 <symbol id="icon-play" viewBox="0 0 16 19" fill="none">
                     <path xmlns="http://www.w3.org/2000/svg" d="M15.75 9.3313L0.374999 18.2081L0.375 0.454538L15.75 9.3313Z" fill="currentColor"/>
                 </symbol>
-                <symbol id="icon-increment" viewBox="0 0 14 14" fill="none">
-                    <path d="M7.79143 0.752394V6.08039H13.1194V8.04839H7.79143V13.3764H5.82343V8.04839H0.49543V6.08039H5.82343V0.752394H7.79143Z" fill="currentColor" />
-                </symbol>
-                <symbol id="icon-decrement" viewBox="0 0 10 3" fill="none">
-                    <path d="M9.58753 0.914978V2.83498H0.0195312V0.914978H9.58753Z" fill="currentColor"/>
+                <symbol id="icon-uncover" viewBox="0 0 20 12" fill="none">
+                    <path d="M18.375 10.625L10.125 2.375L1.875 10.625" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
                 </symbol>
            </svg>
        </div>        
@@ -108,8 +100,8 @@
                                         <li class="nav-item"><a class="nav-link" href="support.html">Поддержка</a></li>
                                         <li class="nav-item"><a class="nav-link" href="proteam.html">Proteam</a></li>
                                         <li class="nav-item"><a class="nav-link" href="partners.html">Студии-партнеры</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="distributors.html">Дистрибьюторы</a></li>
-                                        <li class="nav-item current-menu-item">
+                                        <li class="nav-item current-menu-item"><a class="nav-link" href="distributors.html">Дистрибьюторы</a></li>
+                                        <li class="nav-item">
                                            <a class="nav-link" href="cart.html">
                                                 <svg class="icon-cart icon"><use xlink:href="#icon-cart"></use></svg> 
                                                 Купить
@@ -129,281 +121,214 @@
                 </div>
             </header>
             <main id="main" class="main">
-                <section class="section section--cart overflow-hidden">
+                <section class="section section--proteam-block overflow-hidden">
                     <div class="section__content">
-                        <h3 class="content__heading">Оформление заказа</h3>
-                        <form action="checkout.html" method="get">
-                           <div class="container">
-                                <div class="product">
-                                    <div class="row body">
-                                        <div class="col-12 col-lg-4 align-self-center col__thumbnail">
-                                            <h3 class="product__name">Suprasorb F в рулонах</h3>
-                                            <div class="thumbnail thumbnail--shadow">
-                                                <img src="./assets/img/products/product-1.png" alt="Procut 1 alt" />
+                        <h3 class="content__heading">Дистрибьюторы</h3>
+                        <div class="container partners-search d-flex flex-column align-items-center">
+                            <p class="content__desc text-center">
+                                Вся продукция компании Suprasorb F реализуется через сеть наших официальных дистрибьюторов. По всем вопросам реализации продукции в России обращайтесь к нашим дистрибьюторам.
+                            </p>
+                            <a href="#" class="btn btn--custom btn--outline partner-button" data-toggle="modal" data-target="#callbackModal">Стать дистрибьютором</a>
+                        </div>
+                        <div class="container workers">
+                            <div class="row no-gutters justify-content-between">
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker1.jpg" alt="" />
                                             </div>
-                                        </div>
-                                        <div class="col-12 col-lg-8 col__props">
-                                            <div class="row no-gutters head d-none d-sm-flex">
-                                                <div class="col-6"></div>
-                                                <div class="col-3">
-                                                    <label class="product__quantity">Кол-во:</label>
-                                                </div>
-                                                <div class="col-3 text-right">
-                                                    <label class="product__price">Цена</label>
-                                                </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
                                             </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-7 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        15 см х 10 м
-                                                    </label>
-                                                </div>
-                                                <div class="col-5 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":3600,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-7 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        10 см х 10 м
-                                                    </label>
-                                                </div>
-                                                <div class="col-5 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":2900,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-7 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        10 см х 1 м
-                                                    </label>
-                                                </div>
-                                                <div class="col-5 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":680,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="product">
-                                    <div class="row body">
-                                        <div class="col-12 col-lg-4 align-self-center col__thumbnail">
-                                            <h3 class="product__name">Suprasorb F в индивидуальной уп.</h3>
-                                            <div class="thumbnail thumbnail--shadow">
-                                                <img src="./assets/img/products/product-2.png" alt="Procut 2 alt" />
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker2.jpg" alt="" />
                                             </div>
-                                        </div>
-                                        <div class="col-12 col-lg-8 col__props">
-                                            <div class="row row__size no-gutters head d-none d-sm-flex">
-                                                <div class="col-6"></div>
-                                                <div class="col-3">
-                                                    <label class="product__quantity">Кол-во:</label>
-                                                </div>
-                                                <div class="col-3 text-right">
-                                                    <label class="product__price">Цена</label>
-                                                </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
                                             </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-7 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        15 см х 10 м
-                                                    </label>
-                                                </div>
-                                                <div class="col-5 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":3600,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-7 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        10 см х 10 м
-                                                    </label>
-                                                </div>
-                                                <div class="col-5 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":2900,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-7 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        10 см х 1 м
-                                                    </label>
-                                                </div>
-                                                <div class="col-5 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":680,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-7 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        10 см х 1 м
-                                                    </label>
-                                                </div>
-                                                <div class="col-5 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":3600,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-7 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        10 см х 1 м
-                                                    </label>
-                                                </div>
-                                                <div class="col-5 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":2900,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="product">
-                                    <div class="row body">
-                                        <div class="col-12 col-lg-4 align-self-center col__thumbnail">
-                                            <h3 class="product__name">Рекомендуем антисептики Shuelke tattoo</h3>
-                                            <div class="thumbnail thumbnail--shadow">
-                                                <img src="./assets/img/products/product-3.png" alt="Procut 3 alt" />
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker3.jpg" alt="" />
                                             </div>
-                                        </div>
-                                        <div class="col-12 col-lg-8 col__props">
-                                            <div class="row row__size no-gutters head d-none d-sm-flex">
-                                                <div class="col-6"></div>
-                                                <div class="col-3">
-                                                    <label class="product__quantity">Кол-во:</label>
-                                                </div>
-                                                <div class="col-3 text-right">
-                                                    <label class="product__price">Цена</label>
-                                                </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
                                             </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-9 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        Сенсива эмульсия увлажняющая (150мл)
-                                                    </label>
-                                                </div>
-                                                <div class="col-3 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":3600,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-9 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        Октенисепт спрей для дезинфекции (50мл)
-                                                    </label>
-                                                </div>
-                                                <div class="col-3 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":2900,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-9 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        Микроцид раствор для поверхностей (1000мл)
-                                                    </label>
-                                                </div>
-                                                <div class="col-3 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":680,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-9 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        Октенисепт спрей для дезинфекции (250мл)
-                                                    </label>
-                                                </div>
-                                                <div class="col-3 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":680,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                            <div class="row row__size no-gutters align-items-center">
-                                                <div class="col-9 col-sm-6 col__size">
-                                                    <label class="checkbox--virtual">
-                                                        <input type="checkbox" />
-                                                        <span class="element"></span>
-                                                        Октенидерм спрей для дезинфекции (250мл)
-                                                    </label>
-                                                </div>
-                                                <div class="col-3 col-sm-3 col__qunatity">
-                                                    <div class="product__counter" data-config='{"value":0,"step":1,"price":680,"min":0}'></div>
-                                                </div>
-                                                <div class="col-12 col-sm-3 col__price text-right">
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="row justify-content-end">
-                                    <div class="checkout">
-                                        <div class="checkout__total">
-                                            <span>Итого: <span class="price">15000 <span class="rouble">i</span></span></span>
-                                        </div>
-                                        <div class="checkout__btn">
-                                            <button type="submit" class="btn btn--custom">оформить заказ</button>
-                                        </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker4.jpg" alt="" />
+                                            </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker5.jpg" alt="" />
+                                            </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                   <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker1.jpg" alt="" />
+                                            </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker2.jpg" alt="" />
+                                            </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker3.jpg" alt="" />
+                                            </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker4.jpg" alt="" />
+                                            </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker5.jpg" alt="" />
+                                            </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker1.jpg" alt="" />
+                                            </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker2.jpg" alt="" />
+                                            </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker3.jpg" alt="" />
+                                            </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker4.jpg" alt="" />
+                                            </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-auto">
+                                    <div class="worker">
+                                        <a href="proteam_single.html">
+                                            <div class="thumbnail thumbnail--cover">
+                                                <img src="./assets/img/workers/worker5.jpg" alt="" />
+                                            </div>
+                                            <div class="worker__content d-flex justify-content-between">
+                                                <span class="worker__name">Vincent Bloodline</span>
+                                                <span class="worker__country">RU</span>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </section>
                 <section class="section section__send-question">
@@ -511,5 +436,6 @@
             </div>
         </div>
         <!-- /Modals -->
+        
     </body>
 </html>

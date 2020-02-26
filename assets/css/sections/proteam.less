@@ -2,8 +2,106 @@
 
 .section--proteam-block {
     
-    .heading {
+    .content__heading {
         margin-bottom: 30px;
+    }
+    
+    .content__desc {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .workers {
+        
+        .row {
+
+            & > div {
+                margin-top: 40px;
+            }
+
+        }
+
+        .worker {
+            max-width: 186px;
+
+            margin: 0 auto;
+            
+            & > a {
+                text-decoration: none;
+            }
+
+            .thumbnail {
+                height: 186px;
+            }
+
+            &__content {
+                margin-top: 15px;
+                font-size: 16px;
+            }
+
+            &__name {
+                color: @secondary__color;
+            }
+
+            &__country {
+                color: @primary__color;
+                font-weight: 750;
+            }
+
+        }
+
+    }
+    
+    .partners-search {
+        
+        & > .btn {
+            min-width: 280px;
+        }
+        
+        & > a, &__selects {
+            margin-top: 40px;
+        }
+        
+        &__selects {
+            align-items: center;
+            flex-direction: column;
+            
+            select + select {
+                margin-top: 20px;
+            }
+    
+            @media @sm__screen {
+                flex-direction: row;
+                
+                select + select {
+                    margin-top: 0;
+                }
+                
+            }
+        }
+        
+        .form-control {
+            
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            
+            font-size: 18px;
+            width: 100%;
+            border: none;
+            border-radius: 0;
+            background-color: @secondary__color;
+            
+            @media @sm__screen { 
+                max-width: calc(50% - 12.5px);
+            }
+            
+            option {
+                width: 100%;
+            }
+            
+        }
+        
     }
     
 }
