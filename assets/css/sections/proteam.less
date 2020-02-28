@@ -32,15 +32,27 @@
 
             .thumbnail {
                 height: 186px;
+                margin-bottom: 15px;
+            }
+            
+            .content__detail {
+                font-size: 16px;
+                line-height: 20px;
+                color: @secondary__color;
             }
 
             &__content {
-                margin-top: 15px;
                 font-size: 16px;
             }
 
             &__name {
+                font-size: 16px;
                 color: @secondary__color;
+            }
+            
+            &__url {
+                text-decoration: underline;
+                color: inherit;
             }
 
             &__country {
@@ -48,6 +60,54 @@
                 font-weight: 750;
             }
 
+        }
+        
+        &--alt {
+            
+            .worker__name {
+                display: inline-block;
+                
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 22px;
+                color: @primary__color;
+                
+                margin-bottom: 10px;
+            }
+            
+            .content__detail {
+                 span {
+                    display: block;
+                }
+                
+                .content__social {
+                    margin-top: 10px;
+                    a {
+                        &:not(:last-child) {
+                            margin-right: 15px;
+                        }
+                    }
+                    
+                }
+    
+            }
+            
+            .content__social {
+                
+                svg {
+                    width: 20px;
+                    height: 20px;
+
+                    &.vk { height: 12px }
+                    
+                    &:not(:last-child) {
+                        margin-bottom: 5px;
+                    }
+                    
+                }
+                
+            }
+            
         }
 
     }

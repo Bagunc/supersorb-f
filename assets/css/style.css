@@ -1641,17 +1641,54 @@ textarea {
 }
 .section--proteam-block .workers .worker .thumbnail {
   height: 186px;
+  margin-bottom: 15px;
+}
+.section--proteam-block .workers .worker .content__detail {
+  font-size: 16px;
+  line-height: 20px;
+  color: #C4C4C4;
 }
 .section--proteam-block .workers .worker__content {
-  margin-top: 15px;
   font-size: 16px;
 }
 .section--proteam-block .workers .worker__name {
+  font-size: 16px;
   color: #C4C4C4;
+}
+.section--proteam-block .workers .worker__url {
+  text-decoration: underline;
+  color: inherit;
 }
 .section--proteam-block .workers .worker__country {
   color: #FFD02B;
   font-weight: 750;
+}
+.section--proteam-block .workers--alt .worker__name {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+  color: #FFD02B;
+  margin-bottom: 10px;
+}
+.section--proteam-block .workers--alt .content__detail span {
+  display: block;
+}
+.section--proteam-block .workers--alt .content__detail .content__social {
+  margin-top: 10px;
+}
+.section--proteam-block .workers--alt .content__detail .content__social a:not(:last-child) {
+  margin-right: 15px;
+}
+.section--proteam-block .workers--alt .content__social svg {
+  width: 20px;
+  height: 20px;
+}
+.section--proteam-block .workers--alt .content__social svg.vk {
+  height: 12px;
+}
+.section--proteam-block .workers--alt .content__social svg:not(:last-child) {
+  margin-bottom: 5px;
 }
 .section--proteam-block .partners-search > .btn {
   min-width: 280px;

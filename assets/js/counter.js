@@ -1,3 +1,5 @@
+'use strict';
+
 function InputCounter(node, config) {
     
     

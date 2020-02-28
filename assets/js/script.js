@@ -1,3 +1,5 @@
+'use strict';
+
 let   xlg__screen = 1200,
       lg__screen = 992,
       md__screen = 768,
@@ -70,6 +72,8 @@ jQuery(function($) {
     
     function init__top__slider() {
         
+        if (!$('#top-slider').length) return;
+        
         let config = {
             infinite: false,
             dots: true,
@@ -136,6 +140,8 @@ jQuery(function($) {
     }
     
     function init__reviews__slider() {
+        
+        if (!$('#reviewsSlider').length) return;
         
         let config = {
             infinite: false,
@@ -241,8 +247,8 @@ jQuery(function($) {
             
             $(parent)[checked ? 'addClass' : 'removeClass']('row--active');
             
-            if ('setCounterValue' in counter && checked && !counter.getValue())
-                counter.setCounterValue(1);
+            if ('setCounterValue' in counter)
+                counter.setCounterValue(checked && !counter.getValue() ? 1 : 0);
         });
     }
     
